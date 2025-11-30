@@ -1,13 +1,5 @@
 <div align="center">
 
-```
-  _____ _          __   __
- |  ___(_)_ __ ___ \ \ / /
- | |_  | | '__/ _ \ \ V / 
- |  _| | | | |  __/  | |  
- |_|   |_|_|  \___|  |_|  
-```
-
 # 🔥 FireY
 
 ### Firebase Authorization Security Tester
