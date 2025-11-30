@@ -327,53 +327,6 @@ Check if any endpoints become accessible during off-hours, maintenance windows, 
 
 ---
 
-## 🔧 Advanced Configuration
-
-### Environment Variables
-
-Set default project ID:
-
-```bash
-export FIREY_PROJECT_ID="my-default-project"
-./firey -l paths.txt  # Uses env var if -i not provided (feature request)
-```
-
-### Automation with Cron
-
-Schedule regular security checks:
-
-```bash
-# Check every day at 2 AM
-0 2 * * * /usr/local/bin/firey -i prod-db -l /path/to/paths.txt -o /var/log/firey-$(date +\%Y\%m\%d).txt
-```
-
-### CI/CD Integration
-
-Add to your deployment pipeline:
-
-```yaml
-# .github/workflows/security-check.yml
-name: Firebase Security Check
-on: [push]
-jobs:
-  security:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-go@v2
-      - name: Build FireY
-        run: go build -o firey main.go
-      - name: Run Security Tests
-        run: ./firey -i ${{ secrets.FIREBASE_PROJECT_ID }} -l paths.txt -v -o results.txt
-      - name: Upload Results
-        uses: actions/upload-artifact@v2
-        with:
-          name: security-results
-          path: results.txt
-```
-
----
-
 ## 🐛 Troubleshooting
 
 ### Common Issues
@@ -414,17 +367,6 @@ FireY sends HTTP requests to your Firebase Firestore REST API endpoints and anal
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome! Here are some ways you can help:
-
-- 🐛 Report bugs
-- 💡 Suggest new features
-- 📝 Improve documentation
-- 🔧 Submit pull requests
-
----
-
 ## 📜 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -445,8 +387,8 @@ If you find FireY useful, please consider giving it a star! ⭐
 
 ## 📞 Support
 
-- 🐛 **Issues**: [GitHub Issues](https://github.com/yourusername/firey/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/yourusername/firey/discussions)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/sirbugs/firey/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/sirbugs/firey/discussions)
 - 📧 **Email**: security@yourproject.com
 
 ---
