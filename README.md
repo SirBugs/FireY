@@ -76,7 +76,7 @@ Instantly identify issues with color-coded status codes:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/firey.git
+git clone https://github.com/sirbugs/firey.git
 cd firey
 
 # Build the binary
